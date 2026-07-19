@@ -4,17 +4,17 @@ buildscript {
         // AGP must be in the root classpath so that KotlinAndroidTarget (in the
         // Kotlin Gradle Plugin) can resolve BaseVariant when the :android
         // subproject's plugin classloader inherits from the root.
-        classpath("com.android.tools.build:gradle:9.2.1")
+        classpath("com.android.tools.build:gradle:9.3.0")
     }
 }
 
 plugins {
-    kotlin("jvm") version "2.2.20"
-    kotlin("plugin.serialization") version "2.2.20"
+    kotlin("jvm") version "2.4.10"
+    kotlin("plugin.serialization") version "2.4.10"
     // Dokka 2.x: HTML API reference generation for the root JVM module only.
     // Scoped to this build file so the :android subproject is not pulled in
     // (that would require Dokka's Android support + the Android toolchain).
-    id("org.jetbrains.dokka") version "2.0.0"
+    id("org.jetbrains.dokka") version "2.2.0"
     `maven-publish`
     signing
 }
@@ -26,19 +26,19 @@ repositories { mavenCentral() }
 
 dependencies {
     testImplementation(kotlin("test"))
-    testImplementation("com.google.code.gson:gson:2.11.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    testImplementation("com.google.code.gson:gson:2.14.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
     // `HttpClient` is the documented injection point on RelayTransport /
     // GitHubDirectTransport public constructors, so ktor-client-core must be on
     // the consumer's compile classpath — promote ONLY this artifact to `api`.
     // The remaining ktor / serialization deps stay `implementation` (genuine
     // internals; no other ktor type appears in a public signature).
-    api("io.ktor:ktor-client-core:3.0.3")
-    implementation("io.ktor:ktor-client-cio:3.0.3")
-    implementation("io.ktor:ktor-client-content-negotiation:3.0.3")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:3.0.3")
-    testImplementation("io.ktor:ktor-client-mock:3.0.3")
+    api("io.ktor:ktor-client-core:3.5.1")
+    implementation("io.ktor:ktor-client-cio:3.5.1")
+    implementation("io.ktor:ktor-client-content-negotiation:3.5.1")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.5.1")
+    testImplementation("io.ktor:ktor-client-mock:3.5.1")
 }
 
 // Build on JDK 21 (AGP 9 rejects JDK 26; CI pins Temurin 21). Emit
