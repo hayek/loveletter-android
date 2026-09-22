@@ -3,5 +3,5 @@
     <!-- Pure-Compose app: the activity only needs a no-action-bar host theme;
          all real styling comes from MaterialTheme in setContent. Uses the
          framework Material theme to avoid an AppCompat/Material-Components dep. -->
-    <style name="Theme.AppFeedbackSample" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.LoveLetterSample" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

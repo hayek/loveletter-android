@@ -65,7 +65,7 @@ dokka {
     // URL-safe module name: Dokka derives the output sub-directory from this,
     // and any spaces/parens/uppercase would leak into hosted URLs. Keep it
     // all-lowercase + hyphenated so the path stays clean on GitHub Pages.
-    moduleName.set("appfeedback-android")
+    moduleName.set("loveletter-android")
     dokkaPublications.html {
         outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
     }
@@ -84,18 +84,18 @@ publishing {
         create<MavenPublication>("maven") {
             from(components["java"]) // main jar + sources jar (via withSourcesJar)
             artifact(dokkaJavadocJar)
-            artifactId = "appfeedback-android"
+            artifactId = "loveletter-android"
             pom {
-                name.set("AppFeedback for Android")
+                name.set("Love Letter for Android")
                 description.set(
                     "Android (Kotlin) feedback SDK — turn in-app feedback into a GitHub issue, " +
                         "in one byte-exact wire format shared across Apple, Android & Web.",
                 )
-                url.set("https://github.com/hayek/appfeedback-android")
+                url.set("https://github.com/hayek/loveletter-android")
                 licenses {
                     license {
                         name.set("MIT License")
-                        url.set("https://github.com/hayek/appfeedback-android/blob/main/LICENSE")
+                        url.set("https://github.com/hayek/loveletter-android/blob/main/LICENSE")
                     }
                 }
                 developers {
@@ -106,9 +106,9 @@ publishing {
                     }
                 }
                 scm {
-                    url.set("https://github.com/hayek/appfeedback-android")
-                    connection.set("scm:git:https://github.com/hayek/appfeedback-android.git")
-                    developerConnection.set("scm:git:ssh://git@github.com/hayek/appfeedback-android.git")
+                    url.set("https://github.com/hayek/loveletter-android")
+                    connection.set("scm:git:https://github.com/hayek/loveletter-android.git")
+                    developerConnection.set("scm:git:ssh://git@github.com/hayek/loveletter-android.git")
                 }
             }
         }

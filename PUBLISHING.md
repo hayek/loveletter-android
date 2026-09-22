@@ -1,7 +1,7 @@
 # Publishing to Maven Central
 
 The build is wired to produce a Maven Central-compliant artifact set for
-`io.github.hayek:appfeedback-android`. Everything up to the credential-gated
+`io.github.hayek:loveletter-android`. Everything up to the credential-gated
 upload is done; the steps below need **your** Sonatype Central Portal account
 and GPG key.
 
@@ -61,8 +61,8 @@ Both artifacts are wired:
 
 | Artifact | Module | Contents |
 | --- | --- | --- |
-| `io.github.hayek:appfeedback-android` | root | `com.appfeedback.core` — wire format, transports, `FeedbackClient` |
-| `io.github.hayek:appfeedback-android-compose` | `:android` | `FeedbackSheet`, `currentDeviceInfo`, `androidFeedbackClient` |
+| `io.github.hayek:loveletter-android` | root | `com.loveletter.core` — wire format, transports, `FeedbackClient` |
+| `io.github.hayek:loveletter-android-compose` | `:android` | `FeedbackSheet`, `currentDeviceInfo`, `androidFeedbackClient` |
 
 The Compose module uses AGP single-variant publishing (`release`) with sources +
 Dokka-javadoc jars and the same gated signing. Stage it locally with:

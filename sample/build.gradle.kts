@@ -8,10 +8,10 @@ plugins {
 repositories { google(); mavenCentral() }
 
 android {
-  namespace = "com.appfeedback.sample"
+  namespace = "com.loveletter.sample"
   compileSdk = 35
   defaultConfig {
-    applicationId = "com.appfeedback.sample"
+    applicationId = "com.loveletter.sample"
     minSdk = 24
     targetSdk = 35
     versionCode = 1

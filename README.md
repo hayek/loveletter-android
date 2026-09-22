@@ -1,14 +1,14 @@
-# appfeedback-android
+# loveletter-android
 
-[![CI](https://github.com/hayek/appfeedback-android/actions/workflows/ci.yml/badge.svg)](https://github.com/hayek/appfeedback-android/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![CI](https://github.com/hayek/loveletter-android/actions/workflows/ci.yml/badge.svg)](https://github.com/hayek/loveletter-android/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-The **Android (Kotlin)** SDK in the [AppFeedback](https://hayek.github.io/appfeedback-docs/) family. It turns in-app feedback into a GitHub issue — in the exact same byte-for-byte wire format as the [Apple](https://github.com/hayek/AppFeedbackSDK) and [Web](https://github.com/hayek/appfeedback-web) SDKs.
+The **Android (Kotlin)** SDK in the [Love Letter](https://hayek.github.io/loveletter-docs/) family. It turns in-app feedback into a GitHub issue — in the exact same byte-for-byte wire format as the [Apple](https://github.com/hayek/LoveLetterSDK) and [Web](https://github.com/hayek/loveletter-web) SDKs.
 
-> **Status:** the shared `com.appfeedback.core` module (wire format, transports, `FeedbackClient`) **and** the `:android` Compose UI module (`FeedbackSheet`, `currentDeviceInfo`, `androidFeedbackClient`) are implemented and pass the cross-platform conformance gate plus the Robolectric/Compose tests. Only the Maven Central registry release is still in progress — until it lands, build from this repo.
+> **Status:** the shared `com.loveletter.core` module (wire format, transports, `FeedbackClient`) **and** the `:android` Compose UI module (`FeedbackSheet`, `currentDeviceInfo`, `androidFeedbackClient`) are implemented and pass the cross-platform conformance gate plus the Robolectric/Compose tests. Only the Maven Central registry release is still in progress — until it lands, build from this repo.
 
 ## Why byte-exact?
 
-Every AppFeedback SDK emits an identical GitHub issue body. That contract is pinned by a shared spec and a golden-fixture conformance suite — see [`appfeedback-spec`](https://github.com/hayek/appfeedback-spec) — that runs in this repo's CI. A feedback report filed from Android is indistinguishable from one filed on iOS or the web, so a single inbox parses them all.
+Every Love Letter SDK emits an identical GitHub issue body. That contract is pinned by a shared spec and a golden-fixture conformance suite — see [`loveletter-spec`](https://github.com/hayek/loveletter-spec) — that runs in this repo's CI. A feedback report filed from Android is indistinguishable from one filed on iOS or the web, so a single inbox parses them all.
 
 ## Quick start
 
@@ -25,7 +25,7 @@ val issueNumber = client.submit(
 ```
 
 - `GitHubDirectTransport` — posts straight to the GitHub API with a token held in your app's secure storage.
-- `RelayTransport` — posts to a relay **you** host (Firebase / Appwrite / your own), which holds the token. Recommended when you don't want to ship a writable token in the app. See the [relay guide](https://hayek.github.io/appfeedback-docs/guides/relay/).
+- `RelayTransport` — posts to a relay **you** host (Firebase / Appwrite / your own), which holds the token. Recommended when you don't want to ship a writable token in the app. See the [relay guide](https://hayek.github.io/loveletter-docs/guides/relay/).
 
 ### Drop-in Compose UI
 
@@ -46,8 +46,8 @@ Both modules are implemented, tested, and wired for publishing (see [PUBLISHING.
 
 | Module | Coordinates (registry release pending) | Contents |
 | --- | --- | --- |
-| core | `io.github.hayek:appfeedback-android` | `FeedbackType`, `FeedbackReport`, `DeviceInfo`, `IssueBodyFormatter`/`IssueBodyParser`, transports, `FeedbackClient` |
-| compose | `io.github.hayek:appfeedback-android-compose` | `FeedbackSheet`, `currentDeviceInfo` |
+| core | `io.github.hayek:loveletter-android` | `FeedbackType`, `FeedbackReport`, `DeviceInfo`, `IssueBodyFormatter`/`IssueBodyParser`, transports, `FeedbackClient` |
+| compose | `io.github.hayek:loveletter-android-compose` | `FeedbackSheet`, `currentDeviceInfo` |
 
 minSdk 24.
 
@@ -63,7 +63,7 @@ export JAVA_HOME=/path/to/jdk-21
 ./gradlew :sample:assembleDebug                 # build the APK
 # install + launch on a running emulator/device:
 ./gradlew :sample:installDebug
-adb shell am start -n com.appfeedback.sample/.MainActivity
+adb shell am start -n com.loveletter.sample/.MainActivity
 ```
 
 Or just open the project in Android Studio and run the **sample** configuration
@@ -77,7 +77,7 @@ export JAVA_HOME=/path/to/jdk-21   # AGP 9 rejects newer JDKs; 21 compiles both 
 ./gradlew test                     # conformance gate (core) + :android Robolectric/Compose tests
 ```
 
-API reference: <https://hayek.github.io/appfeedback-docs/reference/kotlin/>
+API reference: <https://hayek.github.io/loveletter-docs/reference/kotlin/>
 
 ## License
 

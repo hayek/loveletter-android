@@ -11,4 +11,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **BREAKING:** renamed the project from AppFeedback to **Love Letter**.
+  Kotlin packages moved from `com.appfeedback.*` to `com.loveletter.*`
+  (`com.loveletter.core`, `com.loveletter.android`); Maven artifacts are now
+  `io.github.hayek:loveletter-android` and
+  `io.github.hayek:loveletter-android-compose` (were `appfeedback-android` /
+  `appfeedback-android-compose`); the sample app's namespace/applicationId is
+  `com.loveletter.sample`. The repository moved to
+  `github.com/hayek/loveletter-android`, the spec to `hayek/loveletter-spec`, and
+  the docs to <https://hayek.github.io/loveletter-docs/>. The issue-body wire
+  format is unchanged. Update your imports and dependency coordinates.
+
 ### Fixed

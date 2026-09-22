@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a problem with the AppFeedback Android/Kotlin SDK.
+description: Report a problem with the Love Letter Android/Kotlin SDK.
 labels: [bug]
 body:
   - type: markdown
@@ -21,7 +21,7 @@ body:
       label: Steps to reproduce
       description: Numbered steps, ideally with a minimal code snippet.
       placeholder: |
-        1. Add the AppFeedback dependency
+        1. Add the Love Letter dependency
         2. Call ...
         3. Observe ...
   - type: input
@@ -29,7 +29,7 @@ body:
     attributes:
       label: Platform / version
       description: SDK version or commit, plus Android API level (e.g. Android 14 / API 34).
-      placeholder: "appfeedback-android main @abc1234, API 34"
+      placeholder: "loveletter-android main @abc1234, API 34"
   - type: textarea
     id: environment
     attributes:

@@ -4,7 +4,7 @@
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppFeedbackSample">
+        android:theme="@style/Theme.LoveLetterSample">
         <activity
             android:name=".MainActivity"
             android:exported="true">

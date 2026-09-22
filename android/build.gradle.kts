@@ -11,14 +11,14 @@ plugins {
 repositories { google(); mavenCentral() }
 
 // Mirror the root module's coordinates so this artifact publishes under the same
-// namespace (the AGP library uses artifactId `appfeedback-android-compose`).
+// namespace (the AGP library uses artifactId `loveletter-android-compose`).
 group = "io.github.hayek"
 // Follow the root's version (single source of truth in gradle.properties) so the
 // core and compose modules always publish at the same version. -Pversion overrides both.
 version = rootProject.version
 
 android {
-  namespace = "com.appfeedback.android"
+  namespace = "com.loveletter.android"
   compileSdk = 35
   defaultConfig { minSdk = 24 }
   buildFeatures { compose = true }
@@ -66,7 +66,7 @@ dokka {
   // URL-safe module name: Dokka derives the output sub-directory from this, so
   // keep it all-lowercase + hyphenated to match the published artifactId and
   // keep hosted (GitHub Pages) URLs clean.
-  moduleName.set("appfeedback-android-compose")
+  moduleName.set("loveletter-android-compose")
   dokkaPublications.html {
     outputDirectory.set(layout.buildDirectory.dir("dokka/html"))
   }
@@ -88,19 +88,19 @@ afterEvaluate {
     publications {
       create<MavenPublication>("release") {
         from(components["release"]) // .aar + sources jar + javadoc jar
-        artifactId = "appfeedback-android-compose"
+        artifactId = "loveletter-android-compose"
         pom {
-          name.set("AppFeedback for Android — Compose UI")
+          name.set("Love Letter for Android — Compose UI")
           description.set(
-            "Jetpack Compose UI for the AppFeedback Android SDK — a drop-in " +
+            "Jetpack Compose UI for the Love Letter Android SDK — a drop-in " +
               "FeedbackSheet and Android device-info helpers on top of the " +
-              "com.appfeedback.core wire format.",
+              "com.loveletter.core wire format.",
           )
-          url.set("https://github.com/hayek/appfeedback-android")
+          url.set("https://github.com/hayek/loveletter-android")
           licenses {
             license {
               name.set("MIT License")
-              url.set("https://github.com/hayek/appfeedback-android/blob/main/LICENSE")
+              url.set("https://github.com/hayek/loveletter-android/blob/main/LICENSE")
             }
           }
           developers {
@@ -111,9 +111,9 @@ afterEvaluate {
             }
           }
           scm {
-            url.set("https://github.com/hayek/appfeedback-android")
-            connection.set("scm:git:https://github.com/hayek/appfeedback-android.git")
-            developerConnection.set("scm:git:ssh://git@github.com/hayek/appfeedback-android.git")
+            url.set("https://github.com/hayek/loveletter-android")
+            connection.set("scm:git:https://github.com/hayek/loveletter-android.git")
+            developerConnection.set("scm:git:ssh://git@github.com/hayek/loveletter-android.git")
           }
         }
       }

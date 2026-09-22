@@ -1,6 +1,6 @@
 pluginManagement { repositories { google(); mavenCentral(); gradlePluginPortal() } }
 
-rootProject.name = "appfeedback-android"
+rootProject.name = "loveletter-android"
 include(":android")
 include(":sample")
 
