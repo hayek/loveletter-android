@@ -21,6 +21,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.Warning
@@ -44,6 +45,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -232,8 +234,25 @@ fun FeedbackSheet(
         Text("Submit", fontWeight = FontWeight.SemiBold, fontSize = 15.sp)
       }
     }
+
+    // ---- Powered by ----
+    // Brand attribution: names the product, so it isn't localized copy.
+    val uriHandler = LocalUriHandler.current
+    Row(
+      modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(8.dp))
+        .clickable { uriHandler.openUri(POWERED_BY_URL) }
+        .padding(vertical = 6.dp)
+        .testTag("afb-powered-by"),
+      verticalAlignment = Alignment.CenterVertically,
+      horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.CenterHorizontally),
+    ) {
+      Icon(Icons.Filled.Favorite, contentDescription = null, tint = onSurfaceVariant, modifier = Modifier.size(11.dp))
+      Text("Powered by Love Letter", fontSize = 11.sp, fontWeight = FontWeight.Medium, color = onSurfaceVariant)
+    }
   }
 }
+
+private const val POWERED_BY_URL = "https://amirhayek.dev/LoveLetter/"
 
 @Composable
 private fun TypeCard(type: FeedbackType, selected: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {

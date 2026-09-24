@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- A "Powered by Love Letter" link below the `FeedbackSheet` submit button,
+  opening https://amirhayek.dev/LoveLetter/.
+
 ### Changed
 
 - **BREAKING:** renamed the project from AppFeedback to **Love Letter**.
