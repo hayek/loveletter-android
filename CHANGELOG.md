@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-09-25
+
 ### Added
 
 - A "Powered by Love Letter" link below the `FeedbackSheet` submit button,
@@ -24,5 +26,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `github.com/hayek/loveletter-android`, the spec to `hayek/loveletter-spec`, and
   the docs to <https://hayek.github.io/loveletter-docs/>. The issue-body wire
   format is unchanged. Update your imports and dependency coordinates.
-
-### Fixed
